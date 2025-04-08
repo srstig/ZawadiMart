@@ -99,7 +99,7 @@ fun IntentScreen(navController: NavController){
         Button(
             onClick = {
                 val callIntent= Intent(Intent.ACTION_DIAL)
-                callIntent.data="tel:0720245837".toUri()
+                callIntent.data="tel:0114270016".toUri()
                 mContext.startActivity(callIntent)
 
             },
@@ -119,8 +119,8 @@ fun IntentScreen(navController: NavController){
         Button(
             onClick = {
                 val smsIntent=Intent(Intent.ACTION_SENDTO)
-                smsIntent.data="smsto:0720245837".toUri()
-                smsIntent.putExtra("sms_body","Hello Glory,how was your day?")
+                smsIntent.data="smsto:0114270016".toUri()
+                smsIntent.putExtra("sms_body","Hello,how was your day?")
                 mContext.startActivity(smsIntent)
 
             },
@@ -141,7 +141,7 @@ fun IntentScreen(navController: NavController){
             onClick = {
                 val shareIntent=Intent(Intent.ACTION_SEND)
                 shareIntent.type="text/plain"
-                shareIntent.putExtra(Intent.EXTRA_TEXT, "Check out this is a cool content")
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "Check out this cool content")
                 mContext.startActivity(Intent.createChooser(shareIntent, "Share"))
 
             },

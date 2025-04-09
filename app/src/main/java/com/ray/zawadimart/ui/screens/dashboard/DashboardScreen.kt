@@ -125,7 +125,7 @@ fun DashboardScreen(navController: NavController){
                     verticalArrangement = Arrangement.Center
                 ){
                     Image(
-                        painter = painterResource(R.drawable.home),
+                        painter = painterResource(R.drawable.about),
                         contentDescription = "",
                         modifier = Modifier.size(100.dp)
                     )
@@ -158,7 +158,7 @@ fun DashboardScreen(navController: NavController){
                     verticalArrangement = Arrangement.Center
                 ){
                     Image(
-                        painter = painterResource(R.drawable.home),
+                        painter = painterResource(R.drawable.contact),
                         contentDescription = "",
                         modifier = Modifier.size(100.dp)
                     )
@@ -186,7 +186,7 @@ fun DashboardScreen(navController: NavController){
                     verticalArrangement = Arrangement.Center
                 ){
                     Image(
-                        painter = painterResource(R.drawable.home),
+                        painter = painterResource(R.drawable.product),
                         contentDescription = "",
                         modifier = Modifier.size(100.dp)
                     )

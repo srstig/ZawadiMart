@@ -2,6 +2,7 @@ package com.ray.zawadimart.ui.screens.dashboard
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,7 +15,9 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.Card
@@ -28,12 +31,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.ray.zawadimart.R
+import com.ray.zawadimart.navigation.ROUT_ABOUT
+import com.ray.zawadimart.navigation.ROUT_HOME
+import com.ray.zawadimart.navigation.ROUT_ITEM
 import com.ray.zawadimart.ui.theme.newOrange
 import com.ray.zawadimart.ui.theme.newWhite
 
@@ -41,7 +48,11 @@ import com.ray.zawadimart.ui.theme.newWhite
 @Composable
 fun DashboardScreen(navController: NavController){
 
-    Column(modifier = Modifier.fillMaxSize().background(newOrange)) {
+    Column(modifier = Modifier
+        .fillMaxSize()
+        .background(newOrange)
+        .verticalScroll(rememberScrollState())
+    ) {
 
        Box() {
            //Card
@@ -72,6 +83,24 @@ fun DashboardScreen(navController: NavController){
                .offset(y = 90.dp)
                .padding(start = 20.dp, end = 20.dp)
            ) {
+              Column (
+                  modifier = Modifier.fillMaxSize(),
+                  horizontalAlignment = Alignment.CenterHorizontally,
+                  verticalArrangement = Arrangement.Center
+              ){
+                  Image(
+                      painter = painterResource(R.drawable.hoonicorn),
+                      contentDescription = "Car",
+                      modifier = Modifier.height(150.dp).width(200.dp),
+                      )
+
+                  Text(text = "ZawadiMart", fontSize = 20.sp, fontWeight = FontWeight.ExtraBold)
+
+
+
+
+              }
+
 
 
 
@@ -89,7 +118,10 @@ fun DashboardScreen(navController: NavController){
         Row (modifier = Modifier.padding(start = 20.dp)){
             //Card 1
             Card (
-               modifier = Modifier.width(150.dp).height(180.dp)
+               modifier = Modifier
+                   .width(150.dp)
+                   .height(180.dp)
+                   .clickable {navController.navigate(ROUT_HOME)}
             ){
         Column (
             modifier = Modifier.fillMaxSize(),
@@ -117,7 +149,11 @@ fun DashboardScreen(navController: NavController){
 
             //Card 2
             Card (
-                modifier = Modifier.width(150.dp).height(180.dp)
+                modifier = Modifier
+                    .width(150.dp)
+                    .height(180.dp)
+                    .clickable {navController.navigate(ROUT_ABOUT)}
+
             ){
                 Column (
                     modifier = Modifier.fillMaxSize(),
@@ -178,7 +214,11 @@ fun DashboardScreen(navController: NavController){
 
             //Card 2
             Card (
-                modifier = Modifier.width(150.dp).height(180.dp)
+                modifier = Modifier
+                    .width(150.dp)
+                    .height(180.dp)
+                    .clickable {navController.navigate(ROUT_ITEM)}
+
             ){
                 Column (
                     modifier = Modifier.fillMaxSize(),

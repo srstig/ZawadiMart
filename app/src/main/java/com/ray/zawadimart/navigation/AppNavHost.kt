@@ -11,6 +11,7 @@ import com.ray.zawadimart.ui.screens.dashboard.DashboardScreen
 import com.ray.zawadimart.ui.screens.home.HomeScreen
 import com.ray.zawadimart.ui.screens.intent.IntentScreen
 import com.ray.zawadimart.ui.screens.item.ItemScreen
+import com.ray.zawadimart.ui.screens.service.ServiceScreen
 import com.ray.zawadimart.ui.screens.start.StartScreen
 
 @Composable
@@ -43,6 +44,10 @@ fun AppNavHost(
 
         composable(ROUT_DASHBOARD) {
             DashboardScreen(navController)
+        }
+
+        composable(ROUT_SERVICE) {
+            ServiceScreen(navController)
         }
     }
 }

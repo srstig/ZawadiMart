@@ -12,13 +12,14 @@ import com.ray.zawadimart.ui.screens.home.HomeScreen
 import com.ray.zawadimart.ui.screens.intent.IntentScreen
 import com.ray.zawadimart.ui.screens.item.ItemScreen
 import com.ray.zawadimart.ui.screens.service.ServiceScreen
+import com.ray.zawadimart.ui.screens.splash.SplashScreen
 import com.ray.zawadimart.ui.screens.start.StartScreen
 
 @Composable
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUT_DASHBOARD
+    startDestination: String = ROUT_SPLASH
 ) {
 
     NavHost(
@@ -48,6 +49,9 @@ fun AppNavHost(
 
         composable(ROUT_SERVICE) {
             ServiceScreen(navController)
+        }
+        composable(ROUT_SPLASH) {
+            SplashScreen(navController)
         }
     }
 }

@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.ray.zawadimart.R
+import com.ray.zawadimart.navigation.ROUT_DASHBOARD
 import com.ray.zawadimart.navigation.ROUT_ITEM
 import com.ray.zawadimart.navigation.ROUT_START
 import com.ray.zawadimart.ui.theme.newOrange
@@ -75,7 +76,7 @@ fun StartScreen(navController: NavController){
 
         Button(
             onClick = {
-                navController.navigate(ROUT_ITEM)
+                navController.navigate(ROUT_DASHBOARD)
 
             },
             colors = ButtonDefaults.buttonColors(newOrange),

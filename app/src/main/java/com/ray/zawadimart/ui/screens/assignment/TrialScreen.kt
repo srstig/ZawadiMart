@@ -32,6 +32,7 @@ import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardColors
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
@@ -69,6 +70,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.ray.zawadimart.R
 import com.ray.zawadimart.navigation.ROUT_HOME
+import com.ray.zawadimart.ui.theme.newGray
 import com.ray.zawadimart.ui.theme.newGreen
 import com.ray.zawadimart.ui.theme.newOrange
 import com.ray.zawadimart.ui.theme.newWhite
@@ -141,9 +143,9 @@ fun TrialScreen(navController: NavController){
         content = { paddingValues ->
             Column(
                 modifier = Modifier
+                    .verticalScroll(rememberScrollState())
                     .padding(paddingValues)
                     .fillMaxSize()
-                    .paint(painter = painterResource(R.drawable.img_2), contentScale = ContentScale.FillBounds)
 
             ) {
                 val mContext = LocalContext.current
@@ -224,16 +226,16 @@ fun TrialScreen(navController: NavController){
                             verticalArrangement = Arrangement.Center
                         ){
                             Image(
-                                painter = painterResource(R.drawable.home),
+                                painter = painterResource(R.drawable.about),
                                 contentDescription = "",
                                 modifier = Modifier.width(200.dp).height(80.dp)
                             )
                             Spacer(modifier = Modifier.height(10.dp))
 
-                            Column() {  }
 
-                            Text(text = "Cryptocurrency ", fontSize = 25.sp, color = Color.White,fontFamily = FontFamily.SansSerif)
-                            Text(text = "Landing Page",fontSize = 25.sp, color = Color.White, fontFamily = FontFamily.SansSerif)
+
+                            Text(text = "Statistics ", fontSize = 25.sp, color = Color.White,fontFamily = FontFamily.SansSerif)
+                            Text(text = "Dashboard",fontSize = 25.sp, color = Color.White, fontFamily = FontFamily.SansSerif)
 
                         }
 
@@ -285,6 +287,102 @@ fun TrialScreen(navController: NavController){
 
                 //End of Row
                 Spacer(modifier = Modifier.height(20.dp))
+
+                Card(modifier = Modifier
+                    .fillMaxWidth(),
+                    colors = CardDefaults.cardColors(newGray)
+                    ) {
+
+                    Text(text = "Personal Tasks",Modifier.padding(25.dp), fontSize = 20.sp, fontWeight = FontWeight.ExtraBold)
+
+                    Spacer(modifier = Modifier.height(8.dp))
+
+
+                    //Row
+                    Card (
+                        modifier = Modifier
+                            .width(500.dp)
+                            .height(90.dp)
+                            .padding(start = 15.dp, end = 15.dp)
+
+                        ){
+                        Row (modifier = Modifier.padding(start = 20.dp)){
+                            Image(
+                                painter = painterResource(R.drawable.img_3),
+                                contentDescription = "Car",
+                                modifier = Modifier.size(80.dp).clip(shape = RoundedCornerShape(15.dp)),
+                                contentScale = ContentScale.FillWidth
+                            )
+                            Spacer(modifier = Modifier.width(20.dp))
+
+                            Column {
+                                Spacer(modifier = Modifier.height(20.dp))
+
+
+                                Text(text = "NDA Review for website project",
+                                    fontSize = 18.sp,
+
+                                    )
+
+                                Text(text = "Today - 10pm",
+                                    fontSize = 15.sp,
+                                )
+
+
+                            }
+
+                        }
+                    }
+                    //End of Row
+
+                    Spacer(modifier = Modifier.height(20.dp))
+
+                    //Row
+                    Card (
+                        modifier = Modifier
+                            .width(500.dp)
+                            .height(90.dp)
+                            .padding(start = 15.dp, end = 15.dp,)
+
+
+                    ){
+                        Row (modifier = Modifier.padding(start = 20.dp)){
+                            Image(
+                                painter = painterResource(R.drawable.img_4),
+                                contentDescription = "Car",
+                                modifier = Modifier.size(80.dp).clip(shape = RoundedCornerShape(15.dp)),
+                                contentScale = ContentScale.FillWidth
+                            )
+                            Spacer(modifier = Modifier.width(20.dp))
+
+                            Column {
+                                Spacer(modifier = Modifier.height(20.dp))
+
+
+                                Text(text = "Email Reply for Green Project",
+                                    fontSize = 18.sp,
+
+                                    )
+
+                                Text(text = "Today - 10pm",
+                                    fontSize = 15.sp,
+                                )
+
+
+                            }
+
+                        }
+                    }
+                    //End of Row
+
+
+
+
+                }
+
+
+
+
 
 
 

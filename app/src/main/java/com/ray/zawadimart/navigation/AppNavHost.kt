@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.ray.zawadimart.ui.screens.about.AboutScreen
+import com.ray.zawadimart.ui.screens.assignment.TrialScreen
 import com.ray.zawadimart.ui.screens.dashboard.DashboardScreen
 import com.ray.zawadimart.ui.screens.home.HomeScreen
 import com.ray.zawadimart.ui.screens.intent.IntentScreen
@@ -52,6 +53,10 @@ fun AppNavHost(
         }
         composable(ROUT_SPLASH) {
             SplashScreen(navController)
+        }
+
+        composable(ROUT_TRIAL) {
+            TrialScreen(navController)
         }
     }
 }

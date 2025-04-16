@@ -58,7 +58,8 @@ fun HomeScreen(navController: NavController){
 
         Image(
             painter = painterResource(R.drawable.hoonicorn),
-            contentDescription = "Car"
+            contentDescription = "Car",
+
         )
 
         Button(

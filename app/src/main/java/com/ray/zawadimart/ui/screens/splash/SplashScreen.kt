@@ -20,6 +20,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.ray.zawadimart.R
+import com.ray.zawadimart.navigation.ROUT_DASHBOARD
+import com.ray.zawadimart.navigation.ROUT_FORM
+import com.ray.zawadimart.navigation.ROUT_LOGIN
 import com.ray.zawadimart.navigation.ROUT_START
 import com.ray.zawadimart.navigation.ROUT_TRIAL
 import com.ray.zawadimart.ui.theme.newOrange
@@ -36,7 +39,7 @@ fun SplashScreen(navController: NavController){
 
     coroutine.launch {
         delay(2000)
-        navController.navigate(ROUT_TRIAL)
+        navController.navigate(ROUT_LOGIN)
     }
 
 
